@@ -87,6 +87,31 @@
         Resume
       </a>
 
+      <!-- MOBILE MENU TOGGLE -->
+      <button
+        type="button"
+        class="md:hidden rounded-lg p-2 text-2xl text-white transition hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-purple-400"
+        (click)="toggleMobileMenu()"
+        [attr.aria-expanded]="mobileMenuOpen"
+        aria-controls="mobile-navigation"
+        aria-label="Toggle navigation menu">
+        <i [class]="mobileMenuOpen ? 'bi bi-x-lg' : 'bi bi-list'"></i>
+      </button>
+
+    </div>
+
+    <!-- MOBILE MENU -->
+    <div id="mobile-navigation" *ngIf="mobileMenuOpen" class="md:hidden border-t border-white/10 bg-[#020617]/95 px-6 py-4 backdrop-blur-md">
+      <ul class="flex flex-col gap-1 text-base font-medium">
+        <li><a href="#home" (click)="closeMobileMenu()" class="block rounded-lg px-3 py-3 hover:bg-white/10 hover:text-purple-400">Home</a></li>
+        <li><a href="#about" (click)="closeMobileMenu()" class="block rounded-lg px-3 py-3 hover:bg-white/10 hover:text-purple-400">About</a></li>
+        <li><a href="#skills" (click)="closeMobileMenu()" class="block rounded-lg px-3 py-3 hover:bg-white/10 hover:text-purple-400">Skills</a></li>
+        <li><a href="#projects" (click)="closeMobileMenu()" class="block rounded-lg px-3 py-3 hover:bg-white/10 hover:text-purple-400">Projects</a></li>
+        <li><a href="#experience" (click)="closeMobileMenu()" class="block rounded-lg px-3 py-3 hover:bg-white/10 hover:text-purple-400">Experience</a></li>
+        <li><a routerLink="/certificates" (click)="closeMobileMenu()" class="block rounded-lg px-3 py-3 hover:bg-white/10 hover:text-purple-400">Certifications</a></li>
+        <li><a href="#contact" (click)="closeMobileMenu()" class="block rounded-lg px-3 py-3 hover:bg-white/10 hover:text-purple-400">Contact</a></li>
+        <li><a href="resume.pdf" download class="mt-2 block rounded-lg bg-gradient-to-r from-purple-600 to-pink-500 px-3 py-3 text-center font-semibold">Download Resume</a></li>
+      </ul>
     </div>
   </nav>
 

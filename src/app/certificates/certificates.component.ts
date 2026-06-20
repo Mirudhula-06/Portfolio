@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
@@ -8,7 +8,11 @@ import { RouterModule } from '@angular/router';
   imports: [CommonModule, RouterModule],
   templateUrl: './certificates.component.html',
 })
-export class CertificatesComponent {
+export class CertificatesComponent implements AfterViewInit {
+  ngAfterViewInit(): void {
+    requestAnimationFrame(() => window.scrollTo({ top: 0, left: 0, behavior: 'auto' }));
+  }
+
 certificates = [
 
   {

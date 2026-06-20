@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgxTypedJsModule } from 'ngx-typed-js';
 import { RouterModule } from '@angular/router';
@@ -10,7 +10,26 @@ import { RouterModule } from '@angular/router';
   templateUrl: './app.component.html',
 })
 
-export class HomeComponent {
+export class HomeComponent implements AfterViewInit {
+  mobileMenuOpen = false;
+
+  ngAfterViewInit(): void {
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+
+    if (!window.location.hash) {
+      requestAnimationFrame(() => window.scrollTo({ top: 0, left: 0, behavior: 'auto' }));
+    }
+  }
+
+  toggleMobileMenu(): void {
+    this.mobileMenuOpen = !this.mobileMenuOpen;
+  }
+
+  closeMobileMenu(): void {
+    this.mobileMenuOpen = false;
+  }
 
   sendMessage(name: string, email: string, message: string): void {
     const subject = encodeURIComponent(`Portfolio enquiry from ${name}`);
