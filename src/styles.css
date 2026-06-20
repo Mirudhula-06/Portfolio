@@ -1,1 +1,372 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body::before{
+  content:'';
+  position:fixed;
+  width:300px;
+  height:300px;
+  background:purple;
+  filter:blur(150px);
+  opacity:.15;
+  pointer-events:none;
+}
+
+body {
+  background: #020617;
+  color: white;
+}
+.skills-section {
+  padding: 90px 40px;
+  background:
+    radial-gradient(circle at top, rgba(168, 85, 247, 0.18), transparent 35%),
+    linear-gradient(135deg, #020617, #050816);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+.skills-title {
+  text-align: center;
+  font-size: 52px;
+  font-weight: 900;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: rgb(247, 165, 243);
+  margin-bottom: 60px;
+  letter-spacing: 3px;
+  text-shadow:
+    0 0 10px #9665c5,
+    0 0 25px #a855f7,
+    0 0 45px #9333ea;
+}
+
+.skills-grid {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px;
+}
+
+.skill-card {
+  position: relative;
+  padding: 32px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1.5px solid rgba(168, 85, 247, 0.6);
+  backdrop-filter: blur(18px);
+
+  overflow: hidden;
+
+  box-shadow:
+    0 0 18px rgba(168, 85, 247, 0.25),
+    inset 0 0 15px rgba(168, 85, 247, 0.06);
+
+  transition:
+    transform 0.45s ease,
+    box-shadow 0.45s ease,
+    border 0.45s ease;
+
+  animation:
+    fadeUp 0.8s ease forwards,
+    floatCard 5s ease-in-out infinite;
+}
+.skill-card::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+
+  background: linear-gradient(
+    135deg,
+    #9333ea,
+    #e879f9,
+    #a855f7,
+    #9333ea
+  );
+
+  background-size: 300% 300%;
+
+  border-radius: 24px;
+
+  z-index: -1;
+
+  opacity: 0;
+
+  transition: opacity 0.4s ease;
+
+  animation: borderGlow 6s linear infinite;
+}
+
+.skill-card:hover::before {
+  opacity: 1;
+}
+
+.skill-card:hover {
+  transform:
+    translateY(-14px)
+    scale(1.03);
+
+  border-color: rgba(216, 180, 254, 0.9);
+
+  box-shadow:
+    0 0 30px rgba(168, 85, 247, 0.75),
+    0 0 60px rgba(168, 85, 247, 0.35),
+    inset 0 0 18px rgba(168, 85, 247, 0.15);
+}
+
+.skill-icon {
+  font-size: 48px;
+  color: #d8b4fe;
+  margin-bottom: 22px;
+
+  text-shadow:
+    0 0 10px #a855f7,
+    0 0 25px #a855f7;
+
+  animation: pulseIcon 3s ease-in-out infinite;
+}
+
+.skill-card h3 {
+  font-size: 19px;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  color: #f5f3ff;
+}
+
+.skill-progress {
+  position: relative;
+  height: 18px;
+  background: rgba(15, 23, 42, 0.9);
+  border-radius: 50px;
+  margin-bottom: 25px;
+  overflow: hidden;
+  border: 1px solid rgba(168, 85, 247, 0.5);
+}
+
+.progress-bar {
+  height: 100%;
+  border-radius: 50px;
+
+  background: linear-gradient(
+    90deg,
+    #9333ea,
+    #e879f9,
+    #a855f7
+  );
+
+  background-size: 200% 200%;
+
+  box-shadow:
+    0 0 10px #a855f7,
+    0 0 20px #e879f9;
+
+  animation:
+    fillBar 1.5s ease forwards,
+    shimmer 3s linear infinite;
+}
+
+.skill-progress span {
+  position: absolute;
+  right: 10px;
+  top: -1px;
+  font-size: 12px;
+  font-weight: 700;
+  color: white;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-tags span {
+  padding: 7px 12px;
+  border-radius: 10px;
+
+  background: rgba(168, 85, 247, 0.12);
+
+  color: #e9d5ff;
+
+  font-size: 14px;
+
+  border: 1px solid rgba(168, 85, 247, 0.2);
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.skill-tags span:hover {
+  background: rgba(168, 85, 247, 0.35);
+
+  transform:
+    scale(1.08)
+    translateY(-3px);
+
+  box-shadow:
+    0 0 15px rgba(168, 85, 247, 0.45);
+}
+
+.skill-tags span:hover {
+  background: rgba(168, 85, 247, 0.35);
+  transform: scale(1.08);
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fillBar {
+  from {
+    width: 0;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+@keyframes borderGlow {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  100% {
+    background-position: 300% 50%;
+  }
+}
+
+@keyframes pulseIcon {
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.12);
+  }
+}
+
+@keyframes floatCard {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@media (max-width: 1024px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .skills-title {
+    font-size: 42px;
+  }
+}
+
+@media (max-width: 640px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .skills-section {
+    padding: 70px 20px;
+  }
+
+  .skills-title {
+    font-size: 34px;
+  }
+}
+
+<!--About-->
+.about-info-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(168, 85, 247, 0.25);
+  transition: 0.35s ease;
+}
+
+.about-info-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(168, 85, 247, 0.8);
+  box-shadow: 0 0 25px rgba(168, 85, 247, 0.25);
+}
+
+.about-info-card i {
+  font-size: 26px;
+  color: #c084fc;
+}
+
+.about-info-card h4 {
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.about-info-card p {
+  font-size: 14px;
+  color: #cbd5e1;
+}
+
+.about-stat-card {
+  min-height: 190px;
+  padding: 30px;
+  border-radius: 24px;
+  background:
+    linear-gradient(145deg, rgba(168, 85, 247, 0.18), rgba(255, 255, 255, 0.04));
+  border: 1px solid rgba(168, 85, 247, 0.35);
+  text-align: center;
+  transition: 0.4s ease;
+}
+
+.about-stat-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow:
+    0 0 30px rgba(168, 85, 247, 0.35),
+    inset 0 0 20px rgba(168, 85, 247, 0.08);
+}
+
+.about-stat-card i {
+  font-size: 42px;
+  color: #d8b4fe;
+  text-shadow: 0 0 18px #a855f7;
+}
+
+.about-stat-card h3 {
+  font-size: 42px;
+  font-weight: 900;
+  margin-top: 18px;
+  color: #ffffff;
+}
+
+.about-stat-card p {
+  color: #cbd5e1;
+  margin-top: 6px;
+}

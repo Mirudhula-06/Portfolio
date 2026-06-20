@@ -27,6 +27,8 @@
               }
             ],
             "styles": [
+              "node_modules/aos/dist/aos.css",
+              "node_modules/bootstrap-icons/font/bootstrap-icons.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -85,12 +87,17 @@
               }
             ],
             "styles": [
-              "src/styles.css"
+              "node_modules/aos/dist/aos.css",
+              "src/styles.css",
+              "node_modules/bootstrap-icons/font/bootstrap-icons.css"
             ],
             "scripts": []
           }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

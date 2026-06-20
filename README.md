@@ -1,27 +1,45 @@
-# Portfolio
+# Mirudhula J — Portfolio
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.21.
+A personal developer portfolio showcasing my projects, technical skills, education, professional training, internships, certifications, and coding profiles.
 
-## Development server
+## Highlights
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Responsive Angular portfolio built with Tailwind CSS
+- Project showcase with optional GitHub repository links
+- Education, extracurricular activities, internship, and professional-training sections
+- Dedicated certifications page
+- Resume download and Gmail-based contact form
+- Links to GitHub, LinkedIn, LeetCode, and HackerRank profiles
 
-## Code scaffolding
+## Tech Stack
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Angular 18
+- TypeScript
+- Tailwind CSS
+- Bootstrap Icons
+- AOS animations
 
-## Build
+## Run Locally
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```bash
+npm install
+npm start
+```
 
-## Running unit tests
+Open `http://localhost:4200` in your browser.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Production Build
 
-## Running end-to-end tests
+```bash
+npm run build
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+The production output is created in `dist/portfolio`.
 
-## Further help
+## Contact
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- Email: [mirudhula.j06@gmail.com](mailto:mirudhula.j06@gmail.com)
+- LinkedIn: [mirudhula-jeyakrishnan](https://www.linkedin.com/in/mirudhula-jeyakrishnan/)
+- GitHub: [Mirudhula-06](https://github.com/Mirudhula-06)
+- LeetCode: [K4xwg6SKy0](https://leetcode.com/u/K4xwg6SKy0/)
+- HackerRank: [mirudhula_j06](https://www.hackerrank.com/profile/mirudhula_j06)
