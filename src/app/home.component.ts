@@ -63,7 +63,7 @@ skills = [
     title: 'Database',
     icon: 'bi bi-database',
     level: 80,
-    items: ['MySQL', 'PostgreSQL', 'MongoDB', 'SQL']
+    items: ['MySQL', 'PostgreSQL', 'MongoDB']
   },
   {
     title: 'AI / ML',
@@ -75,7 +75,7 @@ skills = [
     title: 'Tools',
     icon: 'bi bi-tools',
     level: 85,
-    items: ['Git', 'GitHub', 'Postman', 'Docker', 'Swagger']
+    items: ['Git', 'GitHub', 'Postman', 'Swagger']
   },
   {
     title: 'UI Design',
